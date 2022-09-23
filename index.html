@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Friends App | Mifares</title>
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+	<form class="filter" action="#">
+		<div class="filter__wrapper">
+			<label>
+				Поиск по имени:
+				<input class="person-name" type="text" placeholder="Начните вводить имя...">
+			</label>
+		</div>
+
+		<div class="filter__wrapper">
+			<div class="filter__gender-wrapper">
+				<p class="filter__gender-description">Фильтрация по гендеру:</p>
+				<div class="filter__gender">
+					<input class="filter__gender_input" id="gender__all" type="radio" name="gender" checked>
+					<label for="gender__all" class="filter__gender_label gender__all_label">
+						<span class="filter__gender_label_span gender__all_span">Все</span>
+						<img class="filter__gender-img" src="./images/male-and-female-svgrepo-com.svg" alt="">
+					</label>
+				</div>
+				<div class="filter__gender">
+					<input class="filter__gender_input" id="gender__male" type="radio" name="gender">
+					<label for="gender__male" class="filter__gender_label">
+						<span class="filter__gender_label_span">Мужчины</span>
+						<img class="filter__gender-img" src="./images/male-svgrepo-com.svg" alt="">
+					</label>
+				</div>
+				<div class="filter__gender">
+					<input class="filter__gender_input" id="gender__female" type="radio" name="gender">
+					<label for="gender__female" class="filter__gender_label">
+						<span class="filter__gender_label_span">Женщины</span>
+						<img class="filter__gender-img" src="./images/female-svgrepo-com.svg" alt="">
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="filter__wrapper">
+			<div class="filter__by-age-wrapper">
+				<p class="filter__by-age-description">Сортировка по возрасту:</p>
+				<div class="filter__by-age">
+					<input class="filter__by-age_input" id="by-age__all" type="radio" name="by-age" checked>
+					<label for="by-age__all" class="filter__by-age_label by-age__all-label">
+						<span class="filter__by-age_label_span by-age__all-span">Все</span>
+						<!-- <img class="filter__by-age-img" src="./images/sort-by-age/arrow-up-down-svgrepo-com.svg" alt=""> -->
+					</label>
+				</div>
+				<div class="filter__by-age">
+					<input class="filter__by-age_input" id="by-age_ascending" type="radio" name="by-age">
+					<label for="by-age_ascending" class="filter__by-age_label">
+						<span class="filter__by-age_label_span">По возрастанию</span>
+						<img class="filter__by-age-img" src="./images/sort-by-age/arrow-up-svgrepo-com.svg" alt="">
+					</label>
+				</div>
+				<div class="filter__by-age">
+					<input class="filter__by-age_input" id="by-age_descending" type="radio" name="by-age">
+					<label for="by-age_descending" class="filter__by-age_label">
+						<span class="filter__by-age_label_span">По убыванию</span>
+						<img class="filter__by-age-img" src="./images/sort-by-age/arrow-up-svgrepo-com.svg" alt="">
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="filter__wrapper">
+			<div class="sort-by-alphabet">
+				<p class="sort-by-alphabet__description">Сортировка по алфавиту:</p>
+				<div class="sort-by-alphabet__wrapper">
+					<input class="sort-by-alphabet__input" id="by-alphabet__random" type="radio" name="by-alphabet" checked>
+					<label for="by-alphabet__random" class="sort-by-alphabet__label">
+						<span class="sort-by-alphabet__span">Рандомно</span>
+					</label>
+				</div>
+				<div class="sort-by-alphabet__wrapper">
+					<input class="sort-by-alphabet__input" id="by-alphabet__a-z" type="radio" name="by-alphabet">
+					<label for="by-alphabet__a-z" class="sort-by-alphabet__label">
+						<span class="sort-by-alphabet__span">A → Z</span>
+					</label>
+				</div>
+				<div class="sort-by-alphabet__wrapper">
+					<input class="sort-by-alphabet__input" id="by-alphabet__z-a" type="radio" name="by-alphabet">
+					<label for="by-alphabet__z-a" class="sort-by-alphabet__label">
+						<span class="sort-by-alphabet__span">Z → A</span>
+					</label>
+				</div>
+			</div>
+		</div>
+	</form>
+	<div clas="wrapper">
+		<ul class="people"></ul>
+	</div>
+	<script src="scripts.js"></script>
+</body>
+
+</html>

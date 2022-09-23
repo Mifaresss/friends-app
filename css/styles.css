@@ -1,0 +1,221 @@
+body {
+	font-family: Calibri, sans-serif;
+	padding: 30px;
+}
+
+
+.filter {
+	width: 475px;
+	height: 455px;
+	margin: 40px auto;
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	border: 2px solid rgb(129, 127, 127);
+	border-radius: 10px;
+	box-shadow: 0 0 10px;
+	display: none;
+}
+.filter__wrapper {
+	background-color: rgb(206, 206, 205);
+	padding: 15px 15px;
+	border-radius: 10px;
+}
+.person-name {
+	border: 2px solid rgb(129, 127, 127);
+	border-radius: 5px;
+	padding: 12px;
+	display: block;
+	width: 100%;
+	margin-top: 7px;
+}
+.person-name:focus {
+	outline: 1px solid rgb(129, 127, 127);
+}
+
+
+
+.filter__gender-wrapper {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+	position: relative;
+}
+.filter__gender-description {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.filter__gender {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 27px;
+	flex-grow: 1;
+}
+.filter__gender_label {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	border: 2px solid rgb(130, 130, 128);
+	border-radius: 5px;
+	flex-grow: 1;
+}
+.filter__gender_label_span {
+	margin-left: 12px;
+}
+.gender__all_label {
+	padding-right: 9px;
+}
+.gender__all_span {
+	margin-right: 9px;
+}
+.filter__gender-img {
+	width: 40px;
+}
+.filter__gender_input  {
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+	height: 1px;	
+	overflow: hidden;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	margin: -1px;
+}
+.filter__gender_input:checked ~ .filter__gender_label {
+	background-color: rgb(222, 222, 222);
+	outline: 3px solid rgb(202, 202, 202);
+}
+
+
+.filter__by-age-wrapper {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+	position: relative;
+}
+.filter__by-age-description {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.filter__by-age {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 27px;
+	flex-grow: 1;
+}
+.filter__by-age_input {
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+	height: 1px;	
+	overflow: hidden;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	margin: -1px;
+}
+.filter__by-age_label {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	border: 2px solid rgb(130, 130, 128);
+	border-radius: 5px;
+	padding: 2px 0;
+	flex-grow: 1;
+}
+.by-age__all-label {
+	padding: 9px 15px;
+}
+.filter__by-age_label_span {
+	margin-left: 9px;
+}
+.by-age__all-span {
+	margin-left: 0;
+}
+.filter__by-age-img {
+	width: 30px;
+}
+.filter__by-age_input:checked ~ .filter__by-age_label {
+	background-color: rgb(222, 222, 222);
+	outline: 3px solid rgb(202, 202, 202);
+}
+
+
+.sort-by-alphabet {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+	position: relative;
+}
+.sort-by-alphabet__description {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.sort-by-alphabet__wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 27px;
+	flex-grow: 1;
+}
+.sort-by-alphabet__input {
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+	height: 1px;	
+	overflow: hidden;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	margin: -1px;
+}
+.sort-by-alphabet__label {
+	cursor: pointer;
+	border: 2px solid rgb(130, 130, 128);
+	border-radius: 5px;
+	padding: 8px 0;
+	flex-grow: 1;
+	display: flex;
+	justify-content: center;
+}
+.sort-by-alphabet__span {
+}
+.sort-by-alphabet__input:checked ~ .sort-by-alphabet__label {
+	background-color: rgb(222, 222, 222);
+	outline: 3px solid rgb(202, 202, 202);
+}
+
+
+
+/* ================================== People Cards ================================== */
+.people {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 15px;
+}
+.people__human {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	border: 2px solid powderblue;
+	width: 180px;
+}
+.people__name {
+	
+}
+.people__img {
+	width: 100%;
+}
+.people__age {
+
+}
