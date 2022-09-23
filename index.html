@@ -11,69 +11,63 @@
 </head>
 
 <body>
-	<form class="filter" action="#">
-		<div class="filter__wrapper">
-			<label>
-				Поиск по имени:
-				<input class="person-name" type="text" placeholder="Начните вводить имя...">
-			</label>
-		</div>
+	<div class="container">
+		<form class="filter" action="#">
 
-		<div class="filter__wrapper">
-			<div class="filter__gender-wrapper">
-				<p class="filter__gender-description">Фильтрация по гендеру:</p>
-				<div class="filter__gender">
-					<input class="filter__gender_input" id="gender__all" type="radio" name="gender" checked>
-					<label for="gender__all" class="filter__gender_label gender__all_label">
-						<span class="filter__gender_label_span gender__all_span">Все</span>
-						<img class="filter__gender-img" src="./images/male-and-female-svgrepo-com.svg" alt="">
+			<div class="filter__name filter-name">
+				<label class="filter-name__label">Фильтрация по имени:</label>
+				<input class="filter-name__input" type="text" placeholder="Начните вводить имя...">
+			</div>
+
+			<div class="filter__gender filter-gender filter-age-and-gender">
+				<p class="filter-gender__description filter-age-and-gender__description">Фильтрация по гендеру:</p>
+				<div class="filter-gender__wrapper filter-age-and-gender__wrapper">
+					<input class="filter-gender__input filter-age-and-gender__input" id="filter-gender__all" type="radio" name="gender" checked>
+					<label class="filter-gender__label filter-age-and-gender__label filter-gender__label_all" for="filter-gender__all">
+						<span class="filter-gender__span filter-age-and-gender__span filter-gender__span__all">Все</span>
+						<img class="filter-gender__img filter-age-and-gender__img" src="./images/male-and-female-svgrepo-com.svg" alt="">
 					</label>
 				</div>
-				<div class="filter__gender">
-					<input class="filter__gender_input" id="gender__male" type="radio" name="gender">
-					<label for="gender__male" class="filter__gender_label">
-						<span class="filter__gender_label_span">Мужчины</span>
-						<img class="filter__gender-img" src="./images/male-svgrepo-com.svg" alt="">
+				<div class="filter-gender__wrapper filter-age-and-gender__wrapper">
+					<input class="filter-gender__input filter-age-and-gender__input" id="filter-gender__male" type="radio" name="gender">
+					<label class="filter-gender__label filter-age-and-gender__label" for="filter-gender__male">
+						<span class="filter-gender__span filter-age-and-gender__span">Мужчины</span>
+						<img class="filter-gender__img filter-age-and-gender__img" src="./images/male-svgrepo-com.svg" alt="">
 					</label>
 				</div>
-				<div class="filter__gender">
-					<input class="filter__gender_input" id="gender__female" type="radio" name="gender">
-					<label for="gender__female" class="filter__gender_label">
-						<span class="filter__gender_label_span">Женщины</span>
-						<img class="filter__gender-img" src="./images/female-svgrepo-com.svg" alt="">
+				<div class="filter-gender__wrapper filter-age-and-gender__wrapper">
+					<input class="filter-gender__input filter-age-and-gender__input" id="filter-gender__female" type="radio" name="gender">
+					<label class="filter-gender__label filter-age-and-gender__label" for="filter-gender__female">
+						<span class="filter-gender__span filter-age-and-gender__span">Женщины</span>
+						<img class="filter-gender__img filter-age-and-gender__img" src="./images/female-svgrepo-com.svg" alt="">
 					</label>
 				</div>
 			</div>
-		</div>
 
-		<div class="filter__wrapper">
-			<div class="filter__by-age-wrapper">
-				<p class="filter__by-age-description">Сортировка по возрасту:</p>
-				<div class="filter__by-age">
-					<input class="filter__by-age_input" id="by-age__all" type="radio" name="by-age" checked>
-					<label for="by-age__all" class="filter__by-age_label by-age__all-label">
-						<span class="filter__by-age_label_span by-age__all-span">Все</span>
-						<!-- <img class="filter__by-age-img" src="./images/sort-by-age/arrow-up-down-svgrepo-com.svg" alt=""> -->
+			<div class="filter__by-age sort-by-age filter-age-and-gender">
+				<p class="sort-by-age__description filter-age-and-gender__description">Сортировка по возрасту:</p>
+				<div class="sort-by-age__wrapper filter-age-and-gender__wrapper">
+					<input class="sort-by-age__input filter-age-and-gender__input" id="sort-by-age__all" type="radio" name="sort-by-age" checked>
+					<label class="sort-by-age__label filter-age-and-gender__label" for="sort-by-age__all">
+						<span class="sort-by-age__span filter-age-and-gender__span">Все</span>
 					</label>
 				</div>
-				<div class="filter__by-age">
-					<input class="filter__by-age_input" id="by-age_ascending" type="radio" name="by-age">
-					<label for="by-age_ascending" class="filter__by-age_label">
-						<span class="filter__by-age_label_span">По возрастанию</span>
-						<img class="filter__by-age-img" src="./images/sort-by-age/arrow-up-svgrepo-com.svg" alt="">
+				<div class="sort-by-age__wrapper filter-age-and-gender__wrapper">
+					<input class="sort-by-age__input filter-age-and-gender__input" id="sort-by-age__ascending" type="radio" name="sort-by-age">
+					<label class="sort-by-age__label filter-age-and-gender__label" for="sort-by-age__ascending">
+						<span class="sort-by-age__span filter-age-and-gender__span">По возрастанию</span>
+						<img class="sort-by-age__img filter-age-and-gender__img" src="./images/sort-by-age/arrow-up-svgrepo-com.svg" alt="">
 					</label>
 				</div>
-				<div class="filter__by-age">
-					<input class="filter__by-age_input" id="by-age_descending" type="radio" name="by-age">
-					<label for="by-age_descending" class="filter__by-age_label">
-						<span class="filter__by-age_label_span">По убыванию</span>
-						<img class="filter__by-age-img" src="./images/sort-by-age/arrow-up-svgrepo-com.svg" alt="">
+				<div class="sort-by-age__wrapper filter-age-and-gender__wrapper">
+					<input class="sort-by-age__input filter-age-and-gender__input" id="sort-by-age__descending" type="radio" name="sort-by-age">
+					<label class="sort-by-age__label filter-age-and-gender__label" for="sort-by-age__descending">
+						<span class="sort-by-age__span filter-age-and-gender__span">По убыванию</span>
+						<img class="sort-by-age__img filter-age-and-gender__img" src="./images/sort-by-age/arrow-up-svgrepo-com.svg" alt="">
 					</label>
 				</div>
 			</div>
-		</div>
 
-		<div class="filter__wrapper">
 			<div class="sort-by-alphabet">
 				<p class="sort-by-alphabet__description">Сортировка по алфавиту:</p>
 				<div class="sort-by-alphabet__wrapper">
@@ -95,10 +89,10 @@
 					</label>
 				</div>
 			</div>
+		</form>
+		<div clas="wrapper">
+			<ul class="people"></ul>
 		</div>
-	</form>
-	<div clas="wrapper">
-		<ul class="people"></ul>
 	</div>
 	<script src="scripts.js"></script>
 </body>

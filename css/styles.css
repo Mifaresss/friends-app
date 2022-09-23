@@ -1,80 +1,78 @@
+/* ========================================== Common Styles ========================================== */
 body {
 	font-family: Calibri, sans-serif;
-	padding: 30px;
+}
+.container {
+	max-width: 1400px;
+	margin: 20px auto;
+	padding: 0 15px;
 }
 
 
+/* ========================================== Form Styles ========================================== */
 .filter {
-	width: 475px;
-	height: 455px;
-	margin: 40px auto;
-	padding: 15px;
+	width: 100%;
 	display: flex;
-	flex-direction: column;
-	gap: 10px;
-	border: 2px solid rgb(129, 127, 127);
-	border-radius: 10px;
-	box-shadow: 0 0 10px;
-	display: none;
-}
-.filter__wrapper {
-	background-color: rgb(206, 206, 205);
-	padding: 15px 15px;
-	border-radius: 10px;
-}
-.person-name {
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 20px;
+	padding: 10px;
 	border: 2px solid rgb(129, 127, 127);
 	border-radius: 5px;
-	padding: 12px;
-	display: block;
-	width: 100%;
-	margin-top: 7px;
-}
-.person-name:focus {
-	outline: 1px solid rgb(129, 127, 127);
+	box-shadow: 0 0 7px;
+	margin-bottom: 20px;
 }
 
-
-
-.filter__gender-wrapper {
+/* ================== Filter By Name Styles ================== */
+.filter-name {
+	flex: 1 1 auto;
 	display: flex;
-	gap: 20px;
+	flex-direction: column;
+	gap: 7px;
+}
+.filter-name__input {
+	border: 2px solid rgb(129, 127, 127);
+	border-radius: 5px;
+	padding: 10px;
+}
+.filter-name__input:focus {
+	outline: 3px solid rgb(202, 202, 202);
+}
+
+/* ================== Filter By Gender Styles ================== */
+/* .filter-gender {
+	display: flex;
+	gap: 15px;
 	align-items: center;
+	flex: 1 1 auto;
 	position: relative;
 }
-.filter__gender-description {
+.filter-gender__description {
 	position: absolute;
 	top: 0;
 	left: 0;
 }
-.filter__gender {
+.filter-gender__wrapper {
+	margin-top: 23px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-top: 27px;
-	flex-grow: 1;
+	flex: 1 1 auto;
 }
-.filter__gender_label {
+.filter-gender__label {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	cursor: pointer;
 	border: 2px solid rgb(130, 130, 128);
 	border-radius: 5px;
-	flex-grow: 1;
+	flex: 1 1 auto;
+	padding: 0 5px;
 }
-.filter__gender_label_span {
-	margin-left: 12px;
+.filter-gender__span__all {
+	margin-right: 7px;
 }
-.gender__all_label {
-	padding-right: 9px;
-}
-.gender__all_span {
-	margin-right: 9px;
-}
-.filter__gender-img {
-	width: 40px;
-}
-.filter__gender_input  {
+.filter-gender__input  {
 	position: absolute;
 	white-space: nowrap;
 	width: 1px;
@@ -86,13 +84,62 @@ body {
 	clip-path: inset(50%);
 	margin: -1px;
 }
-.filter__gender_input:checked ~ .filter__gender_label {
+.filter-gender__input:checked ~ .filter-gender__label {
+	background-color: rgb(222, 222, 222);
+	outline: 3px solid rgb(202, 202, 202);
+} */
+
+.filter-age-and-gender {
+	display: flex;
+	gap: 15px;
+	align-items: center;
+	flex: 1 1 auto;
+	position: relative;
+}
+.filter-age-and-gender__description {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.filter-age-and-gender__wrapper {
+	margin-top: 23px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1 1 auto;
+}
+.filter-age-and-gender__label {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	border: 2px solid rgb(130, 130, 128);
+	border-radius: 5px;
+	flex: 1 1 auto;
+	padding: 0 5px;
+}
+.filter-age-and-gender__span__all {
+	margin-right: 7px;
+}
+.filter-age-and-gender__input  {
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+	height: 1px;	
+	overflow: hidden;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	margin: -1px;
+}
+.filter-age-and-gender__input:checked ~ .filter-age-and-gender__label {
 	background-color: rgb(222, 222, 222);
 	outline: 3px solid rgb(202, 202, 202);
 }
 
-
-.filter__by-age-wrapper {
+/* ================== Filter By Age Styles ================== */
+/* .filter__by-age-wrapper {
 	display: flex;
 	gap: 20px;
 	align-items: center;
@@ -109,7 +156,7 @@ body {
 	justify-content: center;
 	margin-top: 27px;
 	flex-grow: 1;
-}
+}	
 .filter__by-age_input {
 	position: absolute;
 	white-space: nowrap;
@@ -193,7 +240,7 @@ body {
 .sort-by-alphabet__input:checked ~ .sort-by-alphabet__label {
 	background-color: rgb(222, 222, 222);
 	outline: 3px solid rgb(202, 202, 202);
-}
+} */
 
 
 
@@ -206,16 +253,24 @@ body {
 .people__human {
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
-	border: 2px solid powderblue;
-	width: 180px;
+	background-color: rgb(165, 165, 165);
+	width: calc(100px + 100 * ((100vw - 320px) / (1600 - 320)));;
+	padding: 7px;
+	box-shadow: 0 0 7px rgb(165, 165, 165);
+	border-radius: 5px;
+	flex: 1 1 auto;
 }
 .people__name {
-	
+	font-size: calc(14px + 4 * ((100vw - 320px) / (1600 - 320)));
+	font-weight: 600;
+	margin-top: 5px;
 }
 .people__img {
 	width: 100%;
+	border-radius: 5px;
 }
 .people__age {
-
+	margin-top: 5px;
+	margin-bottom: 2px;
+	font-size: calc(14px + 2 * ((100vw - 320px) / (1600 - 320)));
 }

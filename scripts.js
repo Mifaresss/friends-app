@@ -1,5 +1,5 @@
 function getData() {
-	const requestURL = 'https://randomuser.me/api/?results=50';
+	const requestURL = 'https://randomuser.me/api/?results=30&inc=name,gender,picture,dob';
 	return fetch(requestURL)
 		.then(response => {
 			if (!response.ok) {
