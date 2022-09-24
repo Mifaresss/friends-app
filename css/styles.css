@@ -4,9 +4,61 @@ body {
 }
 .container {
 	max-width: 1400px;
-	margin: 20px auto;
+	margin: 0 auto 30px;
 	padding: 0 15px;
 }
+
+
+/* ========================================== Header Styles ========================================== */
+.header {
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@import "https://fonts.googleapis.com/css?family=Russo+One";
+.funny-title {
+	border-top: 5px solid #9b8191;
+	border-bottom: 5px solid #9b8191;
+	font-size: 50px;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Russo One',sans-serif;
+	font-weight: 900;
+	letter-spacing: 5px;
+}
+@-webkit-keyframes move-background {
+0%{background-position:-300px 0}
+100%{background-position:300px -300px}
+}
+@-moz-keyframes move-background {
+0%{background-position:-300px 0}
+100%{background-position:300px -300px}
+}
+@keyframes move-background {
+0%{background-position:-300px 0}
+100%{background-position:300px -300px}
+}
+.section-title {
+	-webkit-animation-play-state:running;
+	-moz-animation-play-state:running;
+	animation-play-state:running;
+	color:transparent;
+	background:url(https://obninsksite.ru/assets/theme/images/blog/square.svg) no-repeat #9b8191;
+	background-size:cover;
+	-webkit-text-fill-color:transparent;
+	-moz-text-fill-color:transparent;
+	-webkit-background-clip:text;
+	-moz-background-clip:text;
+	background-clip:text;
+	-webkit-animation:move-background 20s infinite linear alternate;
+	-moz-animation:move-background 20s infinite linear alternate;
+	animation:move-background 20s infinite linear alternate
+}
+
+
+
+
 
 
 /* ========================================== Form Styles ========================================== */
@@ -20,46 +72,50 @@ body {
 	border: 2px solid rgb(129, 127, 127);
 	border-radius: 5px;
 	box-shadow: 0 0 7px;
-	margin-bottom: 20px;
+	position: sticky;
+	background-color: #fff;
+	top: 5px;
+	z-index: 5;
 }
 
 /* ================== Filter By Name Styles ================== */
 .filter-name {
 	flex: 1 1 auto;
 	display: flex;
+	gap: 7.3px;
 	flex-direction: column;
-	gap: 7px;
 }
 .filter-name__input {
 	border: 2px solid rgb(129, 127, 127);
 	border-radius: 5px;
 	padding: 10px;
+	flex: 1 1 auto;
 }
 .filter-name__input:focus {
 	outline: 3px solid rgb(202, 202, 202);
 }
 
-/* ================== Filter By Gender Styles ================== */
-/* .filter-gender {
+/* ================== Filter By Gender, Age, Alphabet Styles ================== */
+.filter-gender-age-alphabet {
 	display: flex;
 	gap: 15px;
 	align-items: center;
 	flex: 1 1 auto;
 	position: relative;
 }
-.filter-gender__description {
+.filter-gender-age-alphabet__description {
 	position: absolute;
 	top: 0;
 	left: 0;
 }
-.filter-gender__wrapper {
+.filter-gender-age-alphabet__wrapper {
 	margin-top: 23px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex: 1 1 auto;
 }
-.filter-gender__label {
+.filter-gender-age-alphabet__label {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -69,10 +125,7 @@ body {
 	flex: 1 1 auto;
 	padding: 0 5px;
 }
-.filter-gender__span__all {
-	margin-right: 7px;
-}
-.filter-gender__input  {
+.filter-gender-age-alphabet__input  {
 	position: absolute;
 	white-space: nowrap;
 	width: 1px;
@@ -84,167 +137,38 @@ body {
 	clip-path: inset(50%);
 	margin: -1px;
 }
-.filter-gender__input:checked ~ .filter-gender__label {
-	background-color: rgb(222, 222, 222);
-	outline: 3px solid rgb(202, 202, 202);
-} */
-
-.filter-age-and-gender {
-	display: flex;
-	gap: 15px;
-	align-items: center;
-	flex: 1 1 auto;
-	position: relative;
-}
-.filter-age-and-gender__description {
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-.filter-age-and-gender__wrapper {
-	margin-top: 23px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex: 1 1 auto;
-}
-.filter-age-and-gender__label {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	cursor: pointer;
-	border: 2px solid rgb(130, 130, 128);
-	border-radius: 5px;
-	flex: 1 1 auto;
-	padding: 0 5px;
-}
-.filter-age-and-gender__span__all {
-	margin-right: 7px;
-}
-.filter-age-and-gender__input  {
-	position: absolute;
-	white-space: nowrap;
-	width: 1px;
-	height: 1px;	
-	overflow: hidden;
-	border: 0;
-	padding: 0;
-	clip: rect(0 0 0 0);
-	clip-path: inset(50%);
-	margin: -1px;
-}
-.filter-age-and-gender__input:checked ~ .filter-age-and-gender__label {
+.filter-gender-age-alphabet__input:checked ~ .filter-gender-age-alphabet__label {
 	background-color: rgb(222, 222, 222);
 	outline: 3px solid rgb(202, 202, 202);
 }
-
-/* ================== Filter By Age Styles ================== */
-/* .filter__by-age-wrapper {
+/* ===== Filter OnLy By Gender Styles ===== */
+.filter-gender__span_all {
+	margin-right: 5px;
+}
+/* ===== Filter OnLy By Age Styles ===== */
+.sort-by-age__label {
+	padding: 2px;
 	display: flex;
-	gap: 20px;
-	align-items: center;
-	position: relative;
+	gap: 2px;
 }
-.filter__by-age-description {
-	position: absolute;
-	top: 0;
-	left: 0;
+.sort-by-age__label_all {
+	padding: 10px;
 }
-.filter__by-age {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-top: 27px;
-	flex-grow: 1;
-}	
-.filter__by-age_input {
-	position: absolute;
-	white-space: nowrap;
-	width: 1px;
-	height: 1px;	
-	overflow: hidden;
-	border: 0;
-	padding: 0;
-	clip: rect(0 0 0 0);
-	clip-path: inset(50%);
-	margin: -1px;
-}
-.filter__by-age_label {
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	border: 2px solid rgb(130, 130, 128);
-	border-radius: 5px;
-	padding: 2px 0;
-	flex-grow: 1;
-}
-.by-age__all-label {
-	padding: 9px 15px;
-}
-.filter__by-age_label_span {
-	margin-left: 9px;
-}
-.by-age__all-span {
-	margin-left: 0;
-}
-.filter__by-age-img {
-	width: 30px;
-}
-.filter__by-age_input:checked ~ .filter__by-age_label {
-	background-color: rgb(222, 222, 222);
-	outline: 3px solid rgb(202, 202, 202);
-}
-
-
-.sort-by-alphabet {
-	display: flex;
-	gap: 20px;
-	align-items: center;
-	position: relative;
-}
-.sort-by-alphabet__description {
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-.sort-by-alphabet__wrapper {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-top: 27px;
-	flex-grow: 1;
-}
-.sort-by-alphabet__input {
-	position: absolute;
-	white-space: nowrap;
-	width: 1px;
-	height: 1px;	
-	overflow: hidden;
-	border: 0;
-	padding: 0;
-	clip: rect(0 0 0 0);
-	clip-path: inset(50%);
-	margin: -1px;
-}
+/* ===== Filter OnLy By Alphabet Styles ===== */
 .sort-by-alphabet__label {
-	cursor: pointer;
-	border: 2px solid rgb(130, 130, 128);
-	border-radius: 5px;
-	padding: 8px 0;
-	flex-grow: 1;
-	display: flex;
-	justify-content: center;
+	padding: 10px;
 }
-.sort-by-alphabet__span {
-}
-.sort-by-alphabet__input:checked ~ .sort-by-alphabet__label {
-	background-color: rgb(222, 222, 222);
-	outline: 3px solid rgb(202, 202, 202);
-} */
+
+
+
+
 
 
 
 /* ================================== People Cards ================================== */
+.wrapper {
+	margin-top: 20px;
+}
 .people {
 	display: flex;
 	flex-wrap: wrap;
@@ -253,12 +177,18 @@ body {
 .people__human {
 	display: flex;
 	flex-direction: column;
-	background-color: rgb(165, 165, 165);
-	width: calc(100px + 100 * ((100vw - 320px) / (1600 - 320)));;
+	width: calc(100px + 115 * ((100vw - 320px) / (1600 - 320)));;
 	padding: 7px;
 	box-shadow: 0 0 7px rgb(165, 165, 165);
 	border-radius: 5px;
 	flex: 1 1 auto;
+	position: relative;
+}
+.people__human_male {
+	background-color: rgb(202, 200, 200);
+}
+.people__human_female {
+	background-color: rgb(245, 219, 252);
 }
 .people__name {
 	font-size: calc(14px + 4 * ((100vw - 320px) / (1600 - 320)));
@@ -273,4 +203,142 @@ body {
 	margin-top: 5px;
 	margin-bottom: 2px;
 	font-size: calc(14px + 2 * ((100vw - 320px) / (1600 - 320)));
+}
+.people__gender {
+	width: calc(25px + 20 * ((100vw - 320px) / (1600 - 320)));
+	position: absolute;
+	right: 0;
+	bottom: 3px;
+}
+
+
+
+/* ================================== Footer Styles ================================== */
+.footer {
+	height: 60px;
+	background-color: rgb(105, 106, 103);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.footer__description {
+	color: rgb(153, 152, 152);
+}
+.footer__link {
+	color: rgb(153, 152, 152);
+}
+
+
+
+
+
+
+
+
+/* ================================== Media Request Styles ================================== */
+@media (max-width: 1094px) {
+	.filter-gender__span_all,
+	.filter-gender__span {
+		display: none;
+	}
+}
+@media (max-width: 930px) {
+	.filter {
+		font-size: 14px;
+	}
+	.filter-gender-age-alphabet__wrapper {
+		margin-top: 20px;
+	}
+	.filter-gender-age-alphabet {
+		gap: 12px;
+	}
+	.filter-gender-age-alphabet__label {
+		padding: 0;
+	}
+	.filter-name {
+		gap: 7px;
+	}
+	.filter-name__input {
+		padding: 6px;
+	}
+	.filter-gender-age-alphabet__img {
+		width: 28px;
+	}
+	.filter-gender__all {
+		padding: 0 5px;
+	}
+	/* ===== Filter OnLy By Age Styles ===== */
+	.sort-by-age__label {
+		padding: 0;
+	}
+	.sort-by-age__label_all {
+		padding: 7px 7px;
+	}
+	.sort-by-age__span {
+		display: none;
+	}
+	/* ===== Filter OnLy By Alphabet Styles ===== */
+	.sort-by-alphabet__label {
+		padding: 7px;
+	}
+}
+@media (max-width: 674px) {
+	.filter {
+		gap: 18px;
+	}
+	.filter-gender-age-alphabet__wrapper {
+		margin-top: 18px;
+	}
+	.filter-gender-age-alphabet {
+		gap: 8px;
+	}
+	.filter__alphabet {
+		order: 3;
+	}
+	.filter-name {
+		order: 4;
+		gap: 4.2px;
+	}
+	.filter__gender {
+		order: 1;
+	}
+	.filter__age {
+		order: 2;
+	}
+}
+@media (max-width: 500px) {
+	.header {
+		height: 70px;
+	}
+	.container {
+		padding: 0 10px;
+	}
+	.funny-title {
+		font-size: 34px;
+	}
+	.filter {
+		gap: 13px;
+		padding: 8px;
+	}
+	.filter-name {
+		gap: 3.7px;
+	}
+	.filter-name__label {
+		min-width: none;
+	}
+	.filter-name__input {
+		padding: 6px 0px 6px 5px;
+	}
+	.sort-by-alphabet__label {
+		padding: 7px 3px;
+	}
+	.sort-by-alphabet__label_all {
+		padding: 7px 5px;
+	}
+	.filter-gender-age-alphabet {
+		gap: 7px;
+	}
+	.filter-gender-age-alphabet__input:checked ~ .filter-gender-age-alphabet__label {
+    outline: 2px solid rgb(202, 202, 202);
+	}
 }

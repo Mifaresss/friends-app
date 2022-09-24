@@ -12,88 +12,97 @@
 
 <body>
 	<div class="container">
+		<header class="header">
+			<h1 class=" title funny-title section-title">Friends App</h1>
+		</header>
 		<form class="filter" action="#">
-
 			<div class="filter__name filter-name">
-				<label class="filter-name__label">Фильтрация по имени:</label>
-				<input class="filter-name__input" type="text" placeholder="Начните вводить имя...">
+				<label class="filter-name__label">Filter by name:</label>
+				<input class="filter-name__input" type="text" placeholder="Start typing a name...">
 			</div>
 
-			<div class="filter__gender filter-gender filter-age-and-gender">
-				<p class="filter-gender__description filter-age-and-gender__description">Фильтрация по гендеру:</p>
-				<div class="filter-gender__wrapper filter-age-and-gender__wrapper">
-					<input class="filter-gender__input filter-age-and-gender__input" id="filter-gender__all" type="radio" name="gender" checked>
-					<label class="filter-gender__label filter-age-and-gender__label filter-gender__label_all" for="filter-gender__all">
-						<span class="filter-gender__span filter-age-and-gender__span filter-gender__span__all">Все</span>
-						<img class="filter-gender__img filter-age-and-gender__img" src="./images/male-and-female-svgrepo-com.svg" alt="">
+			<div class="filter__gender filter-gender-age-alphabet">
+				<p class="filter-gender-age-alphabet__description">Filter by gender:</p>
+				<div class="filter-gender-age-alphabet__wrapper">
+					<input class="filter-gender-age-alphabet__input" id="all" type="radio" name="gender" checked>
+					<label class="filter-gender-age-alphabet__label filter-gender__all" for="all">
+						<span class="filter-gender-age-alphabet__span filter-gender__span_all">All</span>
+						<img class="filter-gender-age-alphabet__img" src="./images/male-and-female-svgrepo-com.svg" alt="">
 					</label>
 				</div>
-				<div class="filter-gender__wrapper filter-age-and-gender__wrapper">
-					<input class="filter-gender__input filter-age-and-gender__input" id="filter-gender__male" type="radio" name="gender">
-					<label class="filter-gender__label filter-age-and-gender__label" for="filter-gender__male">
-						<span class="filter-gender__span filter-age-and-gender__span">Мужчины</span>
-						<img class="filter-gender__img filter-age-and-gender__img" src="./images/male-svgrepo-com.svg" alt="">
+				<div class="filter-gender-age-alphabet__wrapper">
+					<input class="filter-gender-age-alphabet__input" id="male" type="radio" name="gender">
+					<label class="filter-gender-age-alphabet__label" for="male">
+						<span class="filter-gender-age-alphabet__span filter-gender__span">Man</span>
+						<img class="filter-gender-age-alphabet__img" src="./images/male-svgrepo-com.svg" alt="">
 					</label>
 				</div>
-				<div class="filter-gender__wrapper filter-age-and-gender__wrapper">
-					<input class="filter-gender__input filter-age-and-gender__input" id="filter-gender__female" type="radio" name="gender">
-					<label class="filter-gender__label filter-age-and-gender__label" for="filter-gender__female">
-						<span class="filter-gender__span filter-age-and-gender__span">Женщины</span>
-						<img class="filter-gender__img filter-age-and-gender__img" src="./images/female-svgrepo-com.svg" alt="">
-					</label>
-				</div>
-			</div>
-
-			<div class="filter__by-age sort-by-age filter-age-and-gender">
-				<p class="sort-by-age__description filter-age-and-gender__description">Сортировка по возрасту:</p>
-				<div class="sort-by-age__wrapper filter-age-and-gender__wrapper">
-					<input class="sort-by-age__input filter-age-and-gender__input" id="sort-by-age__all" type="radio" name="sort-by-age" checked>
-					<label class="sort-by-age__label filter-age-and-gender__label" for="sort-by-age__all">
-						<span class="sort-by-age__span filter-age-and-gender__span">Все</span>
-					</label>
-				</div>
-				<div class="sort-by-age__wrapper filter-age-and-gender__wrapper">
-					<input class="sort-by-age__input filter-age-and-gender__input" id="sort-by-age__ascending" type="radio" name="sort-by-age">
-					<label class="sort-by-age__label filter-age-and-gender__label" for="sort-by-age__ascending">
-						<span class="sort-by-age__span filter-age-and-gender__span">По возрастанию</span>
-						<img class="sort-by-age__img filter-age-and-gender__img" src="./images/sort-by-age/arrow-up-svgrepo-com.svg" alt="">
-					</label>
-				</div>
-				<div class="sort-by-age__wrapper filter-age-and-gender__wrapper">
-					<input class="sort-by-age__input filter-age-and-gender__input" id="sort-by-age__descending" type="radio" name="sort-by-age">
-					<label class="sort-by-age__label filter-age-and-gender__label" for="sort-by-age__descending">
-						<span class="sort-by-age__span filter-age-and-gender__span">По убыванию</span>
-						<img class="sort-by-age__img filter-age-and-gender__img" src="./images/sort-by-age/arrow-up-svgrepo-com.svg" alt="">
+				<div class="filter-gender-age-alphabet__wrapper">
+					<input class="filter-gender-age-alphabet__input" id="female" type="radio" name="gender">
+					<label class="filter-gender-age-alphabet__label" for="female">
+						<span class="filter-gender-age-alphabet__span filter-gender__span">Women</span>
+						<img class="filter-gender-age-alphabet__img" src="./images/female-svgrepo-com.svg" alt="">
 					</label>
 				</div>
 			</div>
 
-			<div class="sort-by-alphabet">
-				<p class="sort-by-alphabet__description">Сортировка по алфавиту:</p>
-				<div class="sort-by-alphabet__wrapper">
-					<input class="sort-by-alphabet__input" id="by-alphabet__random" type="radio" name="by-alphabet" checked>
-					<label for="by-alphabet__random" class="sort-by-alphabet__label">
-						<span class="sort-by-alphabet__span">Рандомно</span>
+			<div class="filter__age filter-gender-age-alphabet">
+				<p class="filter-gender-age-alphabet__description">Sort by age:</p>
+				<div class="filter-gender-age-alphabet__wrapper">
+					<input class="filter-gender-age-alphabet__input" id="sort-by-age__all" type="radio" name="sort-by-age"
+						checked>
+					<label class="filter-gender-age-alphabet__label sort-by-age__label sort-by-age__label_all"
+						for="sort-by-age__all">
+						<span class="filter-gender-age-alphabet__span">All</span>
 					</label>
 				</div>
-				<div class="sort-by-alphabet__wrapper">
-					<input class="sort-by-alphabet__input" id="by-alphabet__a-z" type="radio" name="by-alphabet">
-					<label for="by-alphabet__a-z" class="sort-by-alphabet__label">
-						<span class="sort-by-alphabet__span">A → Z</span>
+				<div class="filter-gender-age-alphabet__wrapper">
+					<input class="filter-gender-age-alphabet__input" id="sort-by-age__ascending" type="radio" name="sort-by-age">
+					<label class="filter-gender-age-alphabet__label sort-by-age__label" for="sort-by-age__ascending">
+						<span class="filter-gender-age-alphabet__span sort-by-age__span">Up</span>
+						<img class="filter-gender-age-alphabet__img" src="./images/sort-by-age/arrow-up-svgrepo-com.svg" alt="">
 					</label>
 				</div>
-				<div class="sort-by-alphabet__wrapper">
-					<input class="sort-by-alphabet__input" id="by-alphabet__z-a" type="radio" name="by-alphabet">
-					<label for="by-alphabet__z-a" class="sort-by-alphabet__label">
-						<span class="sort-by-alphabet__span">Z → A</span>
+				<div class="filter-gender-age-alphabet__wrapper">
+					<input class="filter-gender-age-alphabet__input" id="sort-by-age__descending" type="radio" name="sort-by-age">
+					<label class="filter-gender-age-alphabet__label sort-by-age__label" for="sort-by-age__descending">
+						<span class="filter-gender-age-alphabet__span sort-by-age__span">Down</span>
+						<img class="filter-gender-age-alphabet__img sort-by-age__img"
+							src="./images/sort-by-age/arrow-down-svgrepo-com.svg" alt="">
+					</label>
+				</div>
+			</div>
+
+			<div class="filter__alphabet filter-gender-age-alphabet">
+				<p class="filter-gender-age-alphabet__description">Sort by alphabet:</p>
+				<div class="filter-gender-age-alphabet__wrapper">
+					<input class="filter-gender-age-alphabet__input" id="by-alphabet__random" type="radio" name="by-alphabet"
+						checked>
+					<label class="filter-gender-age-alphabet__label sort-by-alphabet__label sort-by-alphabet__label_all" for="by-alphabet__random">
+						<span class="filter-gender-age-alphabet__span">All</span>
+					</label>
+				</div>
+				<div class="filter-gender-age-alphabet__wrapper">
+					<input class="filter-gender-age-alphabet__input" id="by-alphabet__a-z" type="radio" name="by-alphabet">
+					<label class="filter-gender-age-alphabet__label sort-by-alphabet__label" for="by-alphabet__a-z">
+						<span class="filter-gender-age-alphabet__span">A → Z</span>
+					</label>
+				</div>
+				<div class="filter-gender-age-alphabet__wrapper">
+					<input class="filter-gender-age-alphabet__input" id="by-alphabet__z-a" type="radio" name="by-alphabet">
+					<label class="filter-gender-age-alphabet__label sort-by-alphabet__label" for="by-alphabet__z-a">
+						<span class="filter-gender-age-alphabet__span">Z → A</span>
 					</label>
 				</div>
 			</div>
 		</form>
-		<div clas="wrapper">
+		<div class="wrapper">
 			<ul class="people"></ul>
 		</div>
 	</div>
+	<footer class="footer">
+		<p class="footer__description">Created by <a class="footer__link" href="https://github.com/Mifaresss">https://github.com/Mifaresss</a></p>
+	</footer>
 	<script src="scripts.js"></script>
 </body>
 
