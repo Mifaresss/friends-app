@@ -2,13 +2,14 @@
 :root {
 	--filters-main-color: #e7eac0;
 	--border-main-color: #817f7f;
+	/* rgb(245, 219, 252) */
 }
 body {
 	/* font-family: 'Titillium Web', sans-serif; */
 	/* font-family: 'Yatra One', sans-serif; */
 	font-family: 'Varela', sans-serif;
 	height: 100%;
-	background: linear-gradient( rgba(50, 50, 50, 0.78), rgba(50, 50, 50, 0) ), url(../images/background/earth-1756274_1280.webp);
+	background: url(../images/background/earth-1756274_1280.webp);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	background-attachment: fixed;
@@ -298,6 +299,9 @@ body {
 	}
 }
 @media (max-width: 930px) {
+	body {
+		background-size: 120% 100%;
+	}
 	.filter {
 		font-size: 14px;
 	}
@@ -332,6 +336,9 @@ body {
 	}
 }
 @media (max-width: 674px) {
+	body {
+		background-size: 150% 100%;
+	}
 	.filter {
 		gap: 18px;
 	}
@@ -346,6 +353,9 @@ body {
 	}
 }
 @media (max-width: 500px) {
+	body {
+		background-size: 170% 100%;
+	}
 	.header {
 		height: 70px;
 	}
@@ -383,6 +393,9 @@ body {
 	}	
 }
 @media (max-width: 400px) {
+	body {
+		background-size: 190% 100%;
+	}
 	.filter {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
