@@ -39,7 +39,7 @@ body {
 0%{background-position:-300px 0}
 100%{background-position:300px -300px}
 }
-.section-title {
+.title {
 	-webkit-animation-play-state:running;
 	-moz-animation-play-state:running;
 	animation-play-state:running;
@@ -313,8 +313,8 @@ body {
 	.container {
 		padding: 0 10px;
 	}
-	.funny-title {
-		font-size: 34px;
+	.title {
+		font-size: 33px;
 	}
 	.filter {
 		gap: 12px;
@@ -342,8 +342,11 @@ body {
     outline: 2px solid rgb(202, 202, 202);
 	}
 	@media (max-width: 324px) {
+		.title {
+			font-size: 28px;
+		}
 		.filter-name__input {
-			width: calc(100px + 40 * ((100vw - 250px) / 90));
+			width: calc(95px + 40 * ((100vw - 250px) / 90));
 		}
 	}
 }
