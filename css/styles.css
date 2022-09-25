@@ -342,8 +342,13 @@ body {
     outline: 2px solid rgb(202, 202, 202);
 	}
 	@media (max-width: 400px) {
-		.filter-name__input {
+		/* .filter-name__input {
 			width: calc(100px + 50 * (100vw - 300px) / 43);
+		} */
+		.filter {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
 		}
 	}
 
