@@ -341,12 +341,10 @@ body {
 	.filter-gender-age-alphabet__input:checked ~ .filter-gender-age-alphabet__label {
     outline: 2px solid rgb(202, 202, 202);
 	}
-	@media (max-width: 324px) {
-		.title {
-			font-size: 27px;
-		}
+	@media (max-width: 400px) {
 		.filter-name__input {
-			width: calc(50px + 77 * ((100vw - 250px) / 90));
+			width: calc(100px + 50 * (100vw - 300px) / 43);
 		}
 	}
+
 }
