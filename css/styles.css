@@ -1,6 +1,6 @@
 /* ========================================== Common Styles ========================================== */
 body {
-	font-family: Calibri, sans-serif;
+	font-family: Roboto, sans-serif;
 }
 .container {
 	max-width: 1400px;
@@ -292,18 +292,8 @@ body {
 	.filter-gender-age-alphabet {
 		gap: 8px;
 	}
-	.filter__alphabet {
-		order: 3;
-	}
 	.filter-name {
-		order: 4;
 		gap: 4.2px;
-	}
-	.filter__gender {
-		order: 1;
-	}
-	.filter__age {
-		order: 2;
 	}
 }
 @media (max-width: 500px) {
@@ -314,7 +304,8 @@ body {
 		padding: 0 10px;
 	}
 	.title {
-		font-size: 33px;
+		font-size: 34px;
+		letter-spacing: 3px;
 	}
 	.filter {
 		gap: 12px;
@@ -330,7 +321,7 @@ body {
 		padding: 6px 0px 6px 5px;
 	}
 	.sort-by-alphabet__label {
-		padding: 7px 3px;
+		padding: 7px 4px;
 	}
 	.sort-by-alphabet__label_all {
 		padding: 7px 5px;
@@ -340,13 +331,15 @@ body {
 	}
 	.filter-gender-age-alphabet__input:checked ~ .filter-gender-age-alphabet__label {
     outline: 2px solid rgb(202, 202, 202);
+	}	
+}
+@media (max-width: 400px) {
+	.filter {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
 	}
-	@media (max-width: 400px) {
-		.filter {
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			grid-template-rows: 1fr 1fr;
-		}
+	.filter-name__input {
+		width: 100%;
 	}
-
 }

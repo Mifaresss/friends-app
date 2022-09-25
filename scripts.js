@@ -11,7 +11,7 @@ function getData() {
 		.then(data => data.results)
 }
 
-function createPeople(person) {
+function createHuman(person) {
 	const human = document.createElement('li');
 	human.classList.add('people__human');
 	coloringCard(person, human);
@@ -31,11 +31,15 @@ let filteredPeople = [];
 function createPeopleHTML() {
 	getData().then(people => {
 		receivedPeople = [...people];
-		const peopleHtml = receivedPeople.map(human => createPeople(human))
-		peopleList.append(...peopleHtml)
+		renderPeople(receivedPeople);
 	})
 }
 createPeopleHTML();
+
+function renderPeople(people) {
+	const peopleHtml = people.map(human => createHuman(human))
+	peopleList.append(...peopleHtml)
+}
 
 
 function convertGender(person) {
