@@ -1,11 +1,29 @@
 /* ========================================== Common Styles ========================================== */
+:root {
+	--filters-main-color: #e7eac0;
+	--border-main-color: #817f7f;
+}
 body {
-	font-family: Roboto, sans-serif;
+	/* font-family: 'Titillium Web', sans-serif; */
+	/* font-family: 'Yatra One', sans-serif; */
+	font-family: 'Varela', sans-serif;
+	height: 100%;
+	background: linear-gradient( rgba(50, 50, 50, 0.78), rgba(50, 50, 50, 0) ), url(../images/background/earth-1756274_1280.webp);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	background-position: top;
+}
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
 }
 .container {
-	max-width: 1400px;
+	max-width: 1200px;
 	margin: 0 auto 30px;
 	padding: 0 15px;
+	flex: 1 1 auto;
 }
 
 
@@ -18,8 +36,8 @@ body {
 }
 @import "https://fonts.googleapis.com/css?family=Russo+One";
 .funny-title {
-	border-top: 5px solid #9b8191;
-	border-bottom: 5px solid #9b8191;
+	border-top: 5px solid var(--filters-main-color);
+	border-bottom: 5px solid var(--filters-main-color);
 	font-size: 50px;
 	text-align: center;
 	text-transform: uppercase;
@@ -44,7 +62,7 @@ body {
 	-moz-animation-play-state:running;
 	animation-play-state:running;
 	color:transparent;
-	background:url(https://obninsksite.ru/assets/theme/images/blog/square.svg) no-repeat #9b8191;
+	background:url(https://obninsksite.ru/assets/theme/images/blog/square.svg) no-repeat var(--filters-main-color);
 	background-size:cover;
 	-webkit-text-fill-color:transparent;
 	-moz-text-fill-color:transparent;
@@ -69,13 +87,25 @@ body {
 	flex-wrap: wrap;
 	gap: 20px;
 	padding: 10px;
-	border: 2px solid rgb(129, 127, 127);
+	border: 2px solid var(--border-main-color);
 	border-radius: 5px;
-	box-shadow: 0 0 7px;
+	box-shadow: 0 0 7px rgba(129, 127, 127, 0.934);
 	position: sticky;
-	background-color: #fff;
+	background-color: rgba(88, 94, 98, 0.675);
 	top: 5px;
-	z-index: 5;
+	z-index: 5000;
+	color: var(--filters-main-color);
+}
+.filter::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0);
+	backdrop-filter: blur(10px);
+	top: 0;
+	left: 0;
+	z-index: -555;
 }
 
 /* ================== Filter By Name Styles ================== */
@@ -86,13 +116,17 @@ body {
 	flex-direction: column;
 }
 .filter-name__input {
-	border: 2px solid rgb(129, 127, 127);
+	border: 2px solid var(--border-main-color);
 	border-radius: 5px;
-	padding: 10px;
+	height: 38px;
+	padding-left: 8px;
 	flex: 1 1 auto;
+	background-color: transparent;
+	color: var(--filters-main-color);
 }
 .filter-name__input:focus {
-	outline: 3px solid rgb(202, 202, 202);
+	background-color: rgba(125, 129, 134, 0.331);
+	outline: 3px solid rgba(202, 202, 202, 0.657);
 }
 
 /* ================== Filter By Gender, Age, Alphabet Styles ================== */
@@ -120,7 +154,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	border: 2px solid rgb(130, 130, 128);
+	border: 2px solid var(--border-main-color);
 	border-radius: 5px;
 	flex: 1 1 auto;
 	padding: 0 5px;
@@ -138,25 +172,21 @@ body {
 	margin: -1px;
 }
 .filter-gender-age-alphabet__input:checked ~ .filter-gender-age-alphabet__label {
-	background-color: rgb(222, 222, 222);
-	outline: 3px solid rgb(202, 202, 202);
+	background-color: rgba(125, 129, 134, 0.331);
+	outline: 3px solid rgba(202, 202, 202, 0.657);
+}
+.filter-gender-age-alphabet__img {
+	width: 34px;
+	height: 100%;
+	fill: var(--filters-main-color);
 }
 /* ===== Filter OnLy By Gender Styles ===== */
 .filter-gender__span_all {
 	margin-right: 5px;
 }
-/* ===== Filter OnLy By Age Styles ===== */
-.sort-by-age__label {
-	padding: 2px;
-	display: flex;
-	gap: 2px;
-}
-.sort-by-age__label_all {
-	padding: 10px;
-}
 /* ===== Filter OnLy By Alphabet Styles ===== */
 .sort-by-alphabet__label {
-	padding: 10px;
+	padding: 9px;
 }
 
 
@@ -166,34 +196,36 @@ body {
 
 
 /* ================================== People Cards ================================== */
-.wrapper {
+.people {
 	margin-top: 20px;
 }
-.people {
+.people__list {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 15px;
+	gap: 10px;
 }
 .people__human {
 	display: flex;
 	flex-direction: column;
-	width: calc(100px + 115 * ((100vw - 320px) / (1600 - 320)));
+	width: calc(100px + 130 * ((100vw - 320px) / (1600 - 320)));
 	padding: 7px;
-	box-shadow: 0 0 7px rgb(165, 165, 165);
 	border-radius: 5px;
 	flex: 1 1 auto;
 	position: relative;
 }
 .people__human_male {
-	background-color: rgb(202, 200, 200);
+	background-color: rgba(40, 110, 180, 0.5);
+	box-shadow: 0 0 8px rgba(40, 110, 180, 0.45);
 }
 .people__human_female {
-	background-color: rgb(245, 219, 252);
+	background-color: rgba(211, 113, 238, 0.5);
+	box-shadow: 0 0 8px rgba(211, 113, 238, 0.559);
 }
 .people__name {
-	font-size: calc(14px + 4 * ((100vw - 320px) / (1600 - 320)));
+	font-size: calc(14px + 3 * ((100vw - 320px) / (1600 - 320)));
 	font-weight: 600;
 	margin-top: 5px;
+	flex: 1 1 auto;
 }
 .people__img {
 	width: 100%;
@@ -216,7 +248,7 @@ body {
 /* ================================== Footer Styles ================================== */
 .footer {
 	height: 60px;
-	background-color: rgb(105, 106, 103);
+	background-color: rgba(105, 106, 103, 0.495);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -226,7 +258,30 @@ body {
 }
 .footer__link {
 	color: rgb(153, 152, 152);
+	transition: all .2s;
+	background-color: transparent;
+	position: relative;
 }
+.footer__link::after  {
+	position: absolute;
+	transition: all .2s;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '';
+  color: transparent;
+  background: #d8ddd7;
+  height: 1px;
+}
+.footer__link:hover {
+	color: rgb(183, 182, 182);
+}
+.footer__link:hover:after {
+	width: 100%;
+}
+
 
 
 
@@ -250,16 +305,16 @@ body {
 		margin-top: 20px;
 	}
 	.filter-gender-age-alphabet {
-		gap: 12px;
+		gap: 10px;
 	}
 	.filter-gender-age-alphabet__label {
 		padding: 0;
 	}
 	.filter-name {
-		gap: 7px;
+		gap: 5.5px;
 	}
 	.filter-name__input {
-		padding: 6px;
+		height: 32px;
 	}
 	.filter-gender-age-alphabet__img {
 		width: 28px;
@@ -268,12 +323,6 @@ body {
 		padding: 0 5px;
 	}
 	/* ===== Filter OnLy By Age Styles ===== */
-	.sort-by-age__label {
-		padding: 0;
-	}
-	.sort-by-age__label_all {
-		padding: 7px 7px;
-	}
 	.sort-by-age__span {
 		display: none;
 	}
