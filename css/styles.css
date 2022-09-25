@@ -346,7 +346,7 @@ body {
 			font-size: 27px;
 		}
 		.filter-name__input {
-			width: calc(87px + 40 * ((100vw - 250px) / 90));
+			width: calc(50px + 77 * ((100vw - 250px) / 90));
 		}
 	}
 }
