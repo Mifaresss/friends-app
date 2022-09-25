@@ -343,10 +343,10 @@ body {
 	}
 	@media (max-width: 324px) {
 		.title {
-			font-size: 28px;
+			font-size: 27px;
 		}
 		.filter-name__input {
-			width: calc(95px + 40 * ((100vw - 250px) / 90));
+			width: calc(87px + 40 * ((100vw - 250px) / 90));
 		}
 	}
 }
