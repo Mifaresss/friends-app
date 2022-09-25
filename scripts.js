@@ -1,5 +1,5 @@
 function getData() {
-	const requestURL = 'https://randomuser.me/api/?results=50&inc=name,gender,picture,dob';
+	const requestURL = 'https://randomuser.me/api/?results=52&inc=name,gender,picture,dob';
 	return fetch(requestURL)
 		.then(response => {
 			if (!response.ok) {
@@ -17,8 +17,8 @@ function createPeople(person) {
 	coloringCard(person, human);
 	human.innerHTML = `
 	<img class='people__img' src='${person.picture.large}'>
-	<h3 class='people__name'>Меня зовут ${person.name.first}</h3>	
-	<p class='people__age'>Мне ${person.dob.age}</p>
+	<h3 class='people__name'>My name is ${person.name.first}</h3>	
+	<p class='people__age'>I am ${person.dob.age} years old</p>
 	<img class='people__gender' src='${convertGender(person)}'>
 	`
 	return human;
@@ -26,6 +26,7 @@ function createPeople(person) {
 
 const peopleList = document.querySelector('.people');
 let receivedPeople = [];
+let filteredPeople = [];
 
 function createPeopleHTML() {
 	getData().then(people => {
@@ -55,5 +56,6 @@ const form = document.querySelector('.filter');
 form.addEventListener('change', filterData);
 
 function filterData({ currentTarget }) {
-	const checkedGender = Array.from(currentTarget.elements.gender).find(gender => gender.checked)
+	const checkedInput = Array.from(currentTarget.elements.gender).find(gender => gender.checked);
+	const checkedGender = checkedInput.id;
 }
