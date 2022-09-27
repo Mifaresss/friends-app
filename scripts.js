@@ -61,8 +61,7 @@ const state = {
 };
 
 const form = document.querySelector('.filter');
-form.addEventListener('change', filterData);
-form.addEventListener('input', filterPeopleByName)
+form.addEventListener('input', filterData);
 
 function getCurrentInputId(elements) {
 	const currentInput = Array.from(elements).find(selectedInput => selectedInput.checked);
@@ -85,7 +84,11 @@ function filterData({currentTarget}) {
 	}
 	
 	const filteredPeople = filterByGender(sortedPeople);
-	renderPeople(filteredPeople);
+	
+	const currentInputNameValue = currentTarget.elements.name.value;
+	const filteredByName = filterByName(currentInputNameValue, filteredPeople);
+	
+	renderPeople(filteredByName);
 }
 
 function filterByGender(people) {
@@ -111,13 +114,6 @@ function sortByAlphabet(people) {
 	if (state.sortBy == 'by-alphabet__a-z') people.sort((a,b) => a.name.first.localeCompare(b.name.first));
 	if (state.sortBy == 'by-alphabet__z-a') people.reverse((a,b) => a.name.first.localeCompare(b.name.first));
 	return people;
-}
-
-
-function filterPeopleByName({currentTarget}) {
-	const currentInputNameValue = currentTarget.elements.name.value;
-	const filteredByName = filterByName(currentInputNameValue, receivedPeople);
-	renderPeople(filteredByName)
 }
 
 function filterByName(data, people) {
