@@ -62,6 +62,8 @@ const state = {
 
 const form = document.querySelector('.filter');
 form.addEventListener('input', filterData);
+const resetButton = document.querySelector('.filter-reset__button')
+resetButton.addEventListener('click', resetFilters);
 
 function getCurrentInputId(elements) {
 	const currentInput = Array.from(elements).find(selectedInput => selectedInput.checked);
@@ -121,4 +123,9 @@ function filterByName(data, people) {
 		return human.name.first.toLowerCase().includes(data.toLowerCase());
 	})
 	return copyPeople;
+}
+
+function resetFilters() {
+	form.reset();
+	renderPeople(receivedPeople)
 }
