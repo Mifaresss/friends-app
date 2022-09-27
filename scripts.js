@@ -16,7 +16,7 @@ function createHuman(person) {
 	coloringCard(person, human);
 	human.innerHTML = `
 		<img class='people__img' src='${person.picture.large}'>
-		<h3 class='people__name'>My name ${person.name.first}</h3>	
+		<h3 class='people__name'>My name's ${person.name.first}</h3>	
 		<p class='people__age'>I am ${person.dob.age}</p>
 		<img class='people__gender' src='${convertGender(person)}'>
 	`
