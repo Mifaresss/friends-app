@@ -91,7 +91,7 @@ body {
 	position: sticky;
 	background-color: rgba(88, 94, 98, 0.675);
 	top: 5px;
-	z-index: 5000;
+	z-index: 5;
 	color: var(--filters-main-color);
 }
 .filter::after {
@@ -103,7 +103,7 @@ body {
 	backdrop-filter: blur(10px);
 	top: 0;
 	left: 0;
-	z-index: -555;
+	z-index: -5;
 }
 
 
@@ -205,14 +205,14 @@ body {
 .people__human {
 	display: flex;
 	flex-direction: column;
-	width: calc(100px + 141 * ((100vw - 320px) / (1600 - 320)));
+	width: calc(110px + 141 * ((100vw - 320px) / (1600 - 320)));
 	padding: 7px;
 	border-radius: 5px;
 	flex: 1 1 auto;
 	position: relative;
 }
 .people__human_male {
-	background-color: rgba(40, 110, 180, 0.5);
+	background-color: rgba(40, 110, 180, 0.6);
 	box-shadow: 0 0 8px rgba(40, 110, 180, 0.45);
 }
 .people__human_female {

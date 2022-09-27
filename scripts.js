@@ -62,7 +62,7 @@ const state = {
 
 const form = document.querySelector('.filter');
 form.addEventListener('change', filterData);
-form.addEventListener('submit', filterPeopleByName)
+form.addEventListener('input', filterPeopleByName)
 
 function getCurrentInputId(elements) {
 	const currentInput = Array.from(elements).find(selectedInput => selectedInput.checked);
@@ -118,8 +118,6 @@ function filterPeopleByName({currentTarget}) {
 	const currentInputNameValue = currentTarget.elements.name.value;
 	const filteredByName = filterByName(currentInputNameValue, receivedPeople);
 	renderPeople(filteredByName)
-	currentTarget.elements.name.value = '';
-	console.log(currentTarget.elements.gender)
 }
 
 function filterByName(data, people) {
