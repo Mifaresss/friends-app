@@ -1,13 +1,13 @@
 function getData() {
 	const requestURL = 'https://randomuser.me/api/?results=150&inc=name,gender,picture,dob';
 	return fetch(requestURL)
-		.then(response => {
-			if (!response.ok) {
-				throw Error(response.statusText);
-			}
-			return response.json();
-		})
-		.then(data => data.results);
+	.then(response => {
+		if (!response.ok) {
+			throw Error(response.statusText);
+		}
+		return response.json();
+	})
+	.then(data => data.results);
 }
 
 function createHuman(person) {
@@ -15,10 +15,10 @@ function createHuman(person) {
 	human.classList.add('people__human');
 	coloringCards(person, human);
 	human.innerHTML = `
-		<img class='people__img' src='${person.picture.large}'>
-		<h3 class='people__name'>My name's ${person.name.first}</h3>	
-		<p class='people__age'>I am ${person.dob.age}</p>
-		<img class='people__gender' src='${convertGender(person)}'>
+	<img class='people__img' src='${person.picture.large}'>
+	<h3 class='people__name'>My name's ${person.name.first}</h3>	
+	<p class='people__age'>I am ${person.dob.age}</p>
+	<img class='people__gender' src='${convertGender(person)}'>
 	`;
 	return human;
 }
@@ -76,22 +76,22 @@ function processMainData({ currentTarget }) {
 		const InputSortingId = getCurrentInputId(currentTarget.elements.sorting);
 		state.sortBy = InputSortingId;
 	}
-
+	
 	const InputGenderId = getCurrentInputId(currentTarget.elements.gender);
 	state.filterGenderBy = InputGenderId;
-
+	
 	let sortedPeople;
 	if (state.sortBy.includes('age')) {
 		sortedPeople = sortByAge(receivedPeople);
 	} else {
 		sortedPeople = sortByAlphabet(receivedPeople);
 	}
-
+	
 	const filteredPeopleByGender = filterByGender(sortedPeople);
-
+	
 	const InputNameValue = currentTarget.elements.name.value;
 	const filteredPeopleByName = filterByName(InputNameValue, filteredPeopleByGender);
-
+	
 	renderPeople(filteredPeopleByName);
 }
 
@@ -107,7 +107,7 @@ function sortByAge(people) {
 	const sorterByAge = (a, b) => a.dob.age - b.dob.age;
 	if (state.sortBy == 'sort-by-age__ascending') copyPeople.sort(sorterByAge);
 	if (state.sortBy == 'sort-by-age__descending') copyPeople.sort((a, b) => sorterByAge(b, a));
-
+	
 	return copyPeople;
 }
 
@@ -129,3 +129,8 @@ function resetFilters() {
 	state.sortBy = 'value';
 	renderPeople(receivedPeople);
 }
+
+
+
+import autoAnimate from './node_modules/@formkit/auto-animate/index.mjs'
+autoAnimate(peopleList);
