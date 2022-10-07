@@ -24,7 +24,7 @@ function createHuman(person) {
 }
 
 const peopleList = document.querySelector('.people__list');
-import autoAnimate from '/node_modules/@formkit/auto-animate/index.mjs'
+import autoAnimate from '/folder/auto-animate/index.mjs'
 autoAnimate(peopleList);
 
 let receivedPeople = [];
